@@ -5,8 +5,6 @@ import "fmt"
 var calculation int
 
 func main() {
-	//fmt.Println(fib(25))
-	//fmt.Println(calculation)
 	fibO := fibonacci()
 	fmt.Println(fibO(10))
 	fmt.Println(calculation)
