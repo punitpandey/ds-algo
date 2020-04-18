@@ -9,6 +9,7 @@
    * LinkedList implementation
 * LinkedList
 * BST(Binary Search Tree)
+* Graph (Undirected Unweighted Graph)
  
 ### Go implementation for common Algorithms
  * Recursion
