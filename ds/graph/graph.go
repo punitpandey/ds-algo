@@ -55,3 +55,7 @@ func (graph *graph) RemoveEdge(nodeOne, nodeTwo interface{}) {
 		}
 	}
 }
+
+func (graph *graph) Show() map[interface{}][]interface{} {
+	return graph.AdjacentList
+}
