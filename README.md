@@ -9,7 +9,7 @@
    * LinkedList implementation
 * LinkedList
 * BST(Binary Search Tree)
-* Graph (Undirected Unweighted Graph)
+* Graph (Undirected Unweighted Graph) _Adjacency list implementation_
  
 ### Go implementation for common Algorithms
  * Recursion
@@ -17,7 +17,7 @@
    * Linear Search
    * Binary Search
    * BFS (Breadth-first search)  
-   * DFS (Pre-order | In-order | Post-order)  [ Implemented in BST ]
+   * DFS (Pre-order | In-order | Post-order)  _Implemented in BST_
  * Sort
    * Bubble Sort
    * Selection Sort
