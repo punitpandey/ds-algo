@@ -2,21 +2,21 @@ package bst
 
 import "../queue"
 
-type Node struct {
+type node struct {
 	value int
-	left  *Node
-	right *Node
+	left  *node
+	right *node
 }
 
 type BST struct {
-	root   *Node
+	root   *node
 	Length int
 }
 
 func (tree *BST) Add(value int) {
-	var currentNode, parentNode *Node
+	var currentNode, parentNode *node
 	if tree.root == nil {
-		tree.root = &Node{
+		tree.root = &node{
 			value: value,
 			left:  nil,
 			right: nil,
@@ -33,13 +33,13 @@ func (tree *BST) Add(value int) {
 			}
 		}
 		if parentNode.value < value {
-			parentNode.right = &Node{
+			parentNode.right = &node{
 				value: value,
 				left:  nil,
 				right: nil,
 			}
 		} else {
-			parentNode.left = &Node{
+			parentNode.left = &node{
 				value: value,
 				left:  nil,
 				right: nil,
@@ -49,7 +49,7 @@ func (tree *BST) Add(value int) {
 }
 
 func (tree *BST) Remove(value int) {
-	var replacer, replacerParent, parentNode *Node
+	var replacer, replacerParent, parentNode *node
 	currentNode := tree.root
 	for currentNode != nil {
 		if currentNode.value == value {
@@ -87,7 +87,7 @@ func (tree *BST) Remove(value int) {
 	}
 }
 
-func (node *Node) Min() (minNode, parentNode *Node) {
+func (node *node) Min() (minNode, parentNode *node) {
 	minNode = node
 	for minNode.left != nil {
 		parentNode = minNode
@@ -100,7 +100,7 @@ func (tree *BST) PreOrderTraverse() (values []int) {
 	return tree.root.PreOrderTraverse()
 }
 
-func (node *Node) PreOrderTraverse() (values []int) {
+func (node *node) PreOrderTraverse() (values []int) {
 	currentNode := node
 	values = append(values, currentNode.value)
 	if currentNode.left != nil {
@@ -116,7 +116,7 @@ func (tree *BST) InOrderTraverse() (value []int) {
 	return tree.root.InOrderTraverse()
 }
 
-func (node *Node) InOrderTraverse() (values []int) {
+func (node *node) InOrderTraverse() (values []int) {
 	currentNode := node
 	if currentNode.left != nil {
 		values = append(values, currentNode.left.InOrderTraverse()...)
@@ -132,7 +132,7 @@ func (tree *BST) PostOrderTraverse() (value []int) {
 	return tree.root.PostOrderTraverse()
 }
 
-func (node *Node) PostOrderTraverse() (values []int) {
+func (node *node) PostOrderTraverse() (values []int) {
 	currentNode := node
 	if currentNode.left != nil {
 		values = append(values, currentNode.left.PostOrderTraverse()...)
@@ -144,13 +144,13 @@ func (node *Node) PostOrderTraverse() (values []int) {
 	return
 }
 
-func (tree *BST) BFTraverse() (value []int) {
+func (tree *BST) BFTraverse() (values []int) {
 	var queue = new(queue.LinkedQueue)
 	queue.Enqueue(tree.root)
 	for queue.Length() != 0 {
-		node, _ := queue.Dequeue()
-		currentNode := node.(*Node)
-		value = append(value, currentNode.value)
+		firstNode, _ := queue.Dequeue()
+		currentNode := firstNode.(*node)
+		values = append(values, currentNode.value)
 		if currentNode.left != nil {
 			queue.Enqueue(currentNode.left)
 		}
@@ -158,5 +158,24 @@ func (tree *BST) BFTraverse() (value []int) {
 			queue.Enqueue(currentNode.right)
 		}
 	}
-	return value
+	return values
+}
+
+func (tree *BST) BFSearch(key int) bool {
+	var queue = new(queue.LinkedQueue)
+	queue.Enqueue(tree.root)
+	for queue.Length() != 0 {
+		firstNode, _ := queue.Dequeue()
+		currentNode := firstNode.(*node)
+		if currentNode.value == key {
+			return true
+		}
+		if currentNode.left != nil {
+			queue.Enqueue(currentNode.left)
+		}
+		if currentNode.right != nil {
+			queue.Enqueue(currentNode.right)
+		}
+	}
+	return false
 }
