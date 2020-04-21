@@ -9,6 +9,7 @@
    * LinkedList implementation
 * LinkedList
 * BST(Binary Search Tree)
+* AVL Tree
 * Graph (Undirected Unweighted Graph) _Adjacency list implementation_
  
 ### Go implementation for common Algorithms
