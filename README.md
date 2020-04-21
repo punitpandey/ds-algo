@@ -1,4 +1,4 @@
-# Implementation of Data Strucutures and Algorithms in Golang
+# Implementation of Data Strucutures and Algorithms with Golang
 
 
 ### Data Strucutures
