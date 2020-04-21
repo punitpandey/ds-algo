@@ -1,6 +1,7 @@
-# DS-Algo
+# Implementation of Data Strucutures and Algorithms in Golang
 
-### Go implementation for common Data Strucutures
+
+### Data Strucutures
 * Stack
    * Array implementation
    * LinkedList implementation
@@ -12,7 +13,7 @@
 * AVL Tree
 * Graph (Undirected Unweighted Graph) _Adjacency list implementation_
  
-### Go implementation for common Algorithms
+### Algorithms
  * Recursion
  * Search
    * Linear Search
