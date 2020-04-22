@@ -19,7 +19,8 @@
    * Linear Search
    * Binary Search
    * BFS (Breadth-first search)  
-   * DFS (Pre-order | In-order | Post-order)  _Implemented in BST_
+   * DFS _Implemented in BST_
+   | Pre-order | In-order | Post-order | 
  * Sort
    * Bubble Sort
    * Selection Sort
